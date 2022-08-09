@@ -1,0 +1,60 @@
+@font-face {
+  src: URL(fonts/digital/digital.ttf);
+  font-family: digital-font;
+}
+
+body {
+  background-image: url(background.png);
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  /* align-items: center; alinea items pero nos interesa alinear todo el contenido de la pagina al centro */
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-display {
+  font-family: digital-font;
+  color: #ff001e;
+  grid-column: 1 / -1;
+  background-color: #380007;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 10px;
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+  background-color: #fb6375;
+  border: solid 1px #ff3950;
+}
+
+.calculator-grid > button:hover {
+  background-color: #ff5569;
+}
+
+.big-button {
+  grid-column: span 2;
+}
+
+.previous-operand {
+  color: #fb6375;
+  font-size: 1.5em;
+}
+
+.current-operand {
+  color: #fb6375;
+  font-size: 2.5em;
+}
